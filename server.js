@@ -4,6 +4,15 @@ const app = express()
 const {bots, playerRecord} = require('./data')
 const {shuffleArray} = require('./utils')
 
+app.use(express.static("public"));
+
+app.get("/styles", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.css"));
+});
+app.get("/js", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.js"));
+});
+
 //ROLLBAR
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
