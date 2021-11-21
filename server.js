@@ -13,18 +13,21 @@ app.get("/js", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.js"));
 });
 
-//ROLLBAR
-var Rollbar = require('rollbar')
+// include and initialize the rollbar library with your access token
+var Rollbar = require("rollbar");
 var rollbar = new Rollbar({
-  accessToken: '2056681190f24d1daa13d84df11f573a',
+  accessToken: '77a0ff9f4c044fb5a033ccd75e420d45',
   captureUncaught: true,
-  captureUnhandledRejections: true,
-})
+  captureUnhandledRejections: true
+});
+
+// record a generic message and send it to Rollbar
+rollbar.log("Hello world!");
 
 
 app.get("/", (req, res) => {
     rollbar.info('SUCKIT')
-    res.sendFile(path.join(__dirname, '../home.html'));
+    res.sendFile(path.join(__dirname, '/public/index.html'));
 })
 
 app.use(express.static('public'))
