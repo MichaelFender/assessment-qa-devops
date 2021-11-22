@@ -1,7 +1,17 @@
-const {shuffleArray} = require('./utils')
+test('name in shuffleArray', () => {
+  expect("Globotron").toContain("tron")
+})
 
-describe('shuffleArray should', () => {
-    test('shuffleArray should return an array', () => {
-        let formattedTitle = shuffleArray(testData..title)
-        expect(typeof formattedTitle).toBe('string')
-      })
+
+test('Robot and id should match', () => {
+  const obj = {
+  id: '9',
+  name: 'Mechi', 
+  imgAddress: 'https://robohash.org/Mechi',
+  health: 80
+};
+  expect(obj.id).toEqual('9')
+
+});
+
+
