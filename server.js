@@ -36,6 +36,7 @@ app.use(express.json())
 
 app.get('/api/robots', (req, res) => {
     try {
+        rollbar.info('someone tapped the api')
         res.status(200).send(botsArr)
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
@@ -56,6 +57,7 @@ app.get('/api/robots/five', (req, res) => {
 })
 
 app.post('/api/duel', (req, res) => {
+    rollbar.warning('Someone trying to get it on')
     try {
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body
@@ -88,6 +90,7 @@ app.post('/api/duel', (req, res) => {
 
 app.get('/api/player', (req, res) => {
     try {
+        rollbar.critical('Who\'s that peepin in my window?')
         res.status(200).send(playerRecord)
     } catch (error) {
         console.log('ERROR GETTING PLAYER STATS', error)
