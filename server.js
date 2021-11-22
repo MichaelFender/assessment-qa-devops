@@ -81,7 +81,7 @@ app.post('/api/duel', (req, res) => {
             playerRecord.losses++
             res.status(200).send('You lost!')
         } else {
-            playerRecord.wins++
+            playerRecord.wins++//changes from losses to wins
             res.status(200).send('You won!')
         }
     } catch (error) {
