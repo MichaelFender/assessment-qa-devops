@@ -58,8 +58,9 @@ app.get('/api/robots/five', (req, res) => {
 })
 
 app.post('/api/duel', (req, res) => {
-    rollbar.warning('Someone trying to get it on')
+    
     try {
+        rollbar.warning('Someone trying to get it on')
         // getting the duos from the front end
         let {compDuo, playerDuo} = req.body
 
