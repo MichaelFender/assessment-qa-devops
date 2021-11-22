@@ -37,7 +37,7 @@ app.use(express.json())
 app.get('/api/robots', (req, res) => {
     try {
         rollbar.info('someone tapped the api')
-        res.status(200).send(botsArr)
+        res.status(200).send(bots)//removed Arr from behind "bots"
     } catch (error) {
         console.log('ERROR GETTING BOTS', error)
         res.sendStatus(400)
